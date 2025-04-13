@@ -1,0 +1,400 @@
+/* Estilos base */
+:root {
+    --primary: #8B0000;
+    --secondary: #FFD700;
+    --light: #FFF8F0;
+    --dark: #333;
+    --font-title: 'Dancing Script', cursive;
+    --font-text: 'Quicksand', sans-serif;
+}
+/* Estilos para el header */
+header {
+    background-color: #FFF8F0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #8B5A2B;
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: #5a5a5a;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #8B0000;
+}
+
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 5%;
+        background: #FFF8F0;
+        flex-direction: column;
+        width: 200px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    #menu-toggle {
+        display: block;
+    }
+}
+
+body {
+    font-family: var(--font-text);
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Estilos para las tarjetas de platos */
+/* Estilos para el título del menú */
+.menu-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.menu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #8B0000;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.title-text {
+    position: relative;
+    z-index: 2;
+}
+
+.title-decoration {
+    position: absolute;
+    top: -20px;
+    right: -25px;
+    font-size: 3rem;
+    color: #FFD700;
+    z-index: 1;
+    animation: pulse 2s infinite;
+}
+
+.menu-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #5a5a5a;
+    margin-top: -1rem;
+}
+
+/* Animación para el elemento decorativo */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Efecto hover */
+.menu-title:hover {
+    text-shadow: 2px 2px 4px rgba(139, 0, 0, 0.3);
+}
+
+.menu-title:hover .title-decoration {
+    animation: pulse 0.5s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-title {
+        font-size: 3rem;
+    }
+    .title-decoration {
+        font-size: 2rem;
+        top: -15px;
+        right: -15px;
+    }
+    .menu-subtitle {
+        font-size: 1.4rem;
+    }
+}
+.menu-category {
+    margin-bottom: 3rem;
+}
+
+.menu-category h3 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+}
+
+.dish-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.dish-card {
+    flex: 1 1 300px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.dish-card:hover {
+    transform: translateY(-10px);
+}
+
+.dish-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.dish-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.dish-card:hover .dish-image img {
+    transform: scale(1.1);
+}
+
+.dish-info {
+    padding: 1.5rem;
+}
+
+.dish-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.description {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* Estilos para la sección de especialidades */
+.especialidades {
+    padding: 5rem 0;
+    background-color: #FFF8F0;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #8B0000;
+    margin-bottom: 3rem;
+}
+
+.especialidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.especialidad-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.especialidad-card:hover {
+    transform: translateY(-10px);
+}
+
+.especialidad-img {
+    height: 250px;
+    overflow: hidden;
+}
+
+.especialidad-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.especialidad-card:hover .especialidad-img img {
+    transform: scale(1.05);
+}
+
+.especialidad-info {
+    padding: 1.5rem;
+}
+
+.especialidad-info h3 {
+    font-size: 1.5rem;
+    color: #8B0000;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.precio {
+    font-weight: bold;
+    color: #8B0000;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dish-container {
+        flex-direction: column;
+    }
+    
+    .dish-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #222;
+    color: white;
+}
+
+.mapa-ubicacion {
+    padding: 2rem 0;
+    background-color: #333;
+}
+
+.mapa-ubicacion h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #FFD700;
+}
+
+.mapa-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    
+}
+
+.footer-content {
+    padding: 3rem 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-info, .footer-contact, .footer-social {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-info h3 {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-contact h3, .footer-social h3 {
+    color: #FFD700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #FFD700;
+}
+
+.copyright {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #111;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+.copyright p {
+    margin: 0.5rem 0;
+}
